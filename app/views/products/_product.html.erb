@@ -8,20 +8,33 @@
   <% end%>
 
 
-  <div>
+<% if product.quantity == 0 %>
 
   <div>
-    <span class='soldout'>
-      Sold Out
-    </span>
+    <div>
+      <span class='soldout'>
+        Sold Out
+      </span>
+    </div>
+
+    <div>
+      <%= button_to add_item_cart_path(product_id: product.id), class: 'btn disabled' ,
+      method: :post do %>
+        <%= fa_icon "shopping-cart", text: 'Add' %> 
+        <% end %>
+    </div>
   </div>
 
-  <div>
-    <%= button_to add_item_cart_path(product_id: product.id), class: 'btn disabled' ,
-    method: :post do %>
-      <%= fa_icon "shopping-cart", text: 'Add' %> 
-    <% end %>
-  </div>
-  
-  </div>
+  <% else %>
+
+    <div>
+      <%= button_to add_item_cart_path(product_id: product.id), class: 'btn' ,
+      method: :post do %>
+        <%= fa_icon "shopping-cart", text: 'Add' %> 
+        <% end %>
+    </div>
+
+  <% end %>
+
+
 </article>
