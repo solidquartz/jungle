@@ -23,7 +23,7 @@
   <div class="panel panel-default items">
     <table class="table table-bordered">
       <thead>
-        <tr>
+        <tr class="centered">
           <th colspan="2">Product</th>
           <th>Unit Price</th>
           <th>Quantity</th>
@@ -31,8 +31,8 @@
         </tr>
       </thead>
       <tbody>
-        <% enhanced_cart.each do |item| %>
-          <%= render 'item', product: item[:product], quantity: item[:quantity].to_i %>
+        <% @order.line_items.each do |item| %>
+          <%= render 'item', product: item.product, quantity: item.quantity.to_i %>
         <% end %>
       </tbody>
       <tfoot>
@@ -41,7 +41,7 @@
             TOTAL:
           </th>
           <th>
-            <%= humanized_money_with_symbol cart_subtotal_cents / 100.0 %>
+            <%= humanized_money_with_symbol @order.total_cents / 100.0 %>
           </th>
         </tr>
       </tfoot>
