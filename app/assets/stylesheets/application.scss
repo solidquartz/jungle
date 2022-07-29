@@ -23,6 +23,8 @@ h2,
 h3,
 h4 {
   font-family: "Montserrat", sans-serif;
+  padding-top: .3em;
+  padding-bottom: .3em;
 }
 // Bootstrap adjustments
 form.button_to {
@@ -72,12 +74,14 @@ form.button_to {
     text-align: center;
     margin: 0;
     font-weight: 700;
+
   }
   h1 {
     line-height: 0.7;
     font-weight: 900;
     font-size: 6.5em;
     font-style: italic;
+
   }
   h2 {
     margin-top: 0.7em;
