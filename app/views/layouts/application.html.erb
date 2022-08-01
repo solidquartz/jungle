@@ -9,15 +9,18 @@
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,600;0,700;0,800;0,900;1,600;1,700;1,800;1,900&family=Source+Sans+Pro:ital,wght@0,300;0,400;0,600;0,700;0,900;1,300;1,400;1,600;1,700;1,900&display=swap" rel="stylesheet">
   <%= csrf_meta_tags %>
 </head>
+
+
 <body>
 
-<% if notice %>
-      	    <%= notice %>
-	<% end %>
+
+  <% if notice %>
+    <%= notice %>
+  <% end %>
 	
-	<% if alert %>
-      	    <%= alert %>
-	<% end %>
+  <% if alert %>
+    <%= alert %>
+  <% end %>
 
   <%= render 'layouts/top_nav' %>
 
@@ -25,7 +28,9 @@
     <%= yield %>
   </main>
 
+
   <%= yield :end_of_body %>
+
 
   <footer class="py-3 my-4">
     <ul class="nav justify-content-center border-bottom pb-3 mb-3">
@@ -35,5 +40,6 @@
     </ul>
     <p class="text-center text-muted">© 2021 Jungle, Inc</p>
   </footer>
+
 </body>
 </html>
