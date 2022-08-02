@@ -10,15 +10,17 @@ RSpec.describe User, type: :model do
   end
 
   it "is invalid when the email is not unique" do
-    User.create!(:email => "email@email.com", :password => "password", :password_confirmation => "password")
-    @user = User.new(:email => "email@email.com", :password => "password", :password_confirmation => "password")
+    User.create!(:first_name => "Tifa", :last_name => "Lockhart", :email => "email@email.com", :password => "password", :password_confirmation => "password")
+    @user = User.new(:first_name => "Cloud", :last_name => "Strife",:email => "email@email.com", :password => "password", :password_confirmation => "password")
     expect(@user).to_not be_valid
     expect(@user.errors.full_messages[0]).to eq("Email has already been taken")
   end
 
-  # it "must have a first name, last name, and email" do
-
-  # end
+  it "is invalid when first name is not provided" do
+    @user = User.new(:first_name => nil, :last_name => "Lockhart", :email => "email@email.com", :password => "password", :password_confirmation => "password")
+    expect(@user).to_not be_valid
+    expect(@user.errors.full_messages[0]).to eq("First name can't be blank")
+  end
 
 
   end
