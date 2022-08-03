@@ -7,7 +7,7 @@ describe('Home Page', () => {
     cy.get(".products article").should("be.visible");
   });
 
-  it("There are 12 products on the page", () => {
-    cy.get(".products article").should("have.length", 12);
+  it("There are 2 products on the page", () => {
+    cy.get(".products article").should("have.length", 2);
   });
 });
