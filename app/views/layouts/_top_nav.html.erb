@@ -58,7 +58,7 @@
           <ul class="dropdown-menu dropdown-menu-dark">
             <li><%= link_to 'Dashboard', [:admin, :root], class: "nav-link" %></li>
             <li><%= link_to 'Products', [:admin, :products], class: "nav-link" %></li>
-            <li><%= link_to 'Categories', [:admin, :categories], class: "nav-link" %></li>
+            <><%= link_to 'Categories', [:admin, :categories], class: "nav-link" %></li>
           </ul>
         </li>
         <li class="nav-item end-0">
@@ -67,7 +67,8 @@
             <%= "Logged in as #{current_user.first_name}" %> <%= link_to 'Log Out', logout_path, method: :delete, class: "nav-link " %>
           <% else %>
       <!-- not logged in -->
-            <%= link_to 'Log In', login_path, class: "nav-link " %> or <%= link_to 'Sign Up', new_user_path, class: "nav-link " %>
+            <li><%= link_to 'Log In', login_path, class: "nav-link " %></li>  
+            <li><%= link_to 'Sign Up', new_user_path, class: "nav-link " %></li>
           <% end %>
         </li>
         <li class="nav-item end-0">
